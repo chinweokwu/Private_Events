@@ -24,6 +24,8 @@
   <strong>End time:</strong>
   <%= @event.end_time %>
 </p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<% if user_allowed %>
+<%= link_to 'Edit', edit_event_path(@event) %> 
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
 <%= link_to 'Back', events_path %>
