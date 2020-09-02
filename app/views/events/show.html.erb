@@ -24,6 +24,18 @@
   <strong>End time:</strong>
   <%= @event.end_time %>
 </p>
+
+
+<button>Click to attend event </button>
+
+<br>
+<strong>Attendees</strong>
+<br>
+<% @attendees.each do |attendee| %>
+<%= @attendee.name %>
+<% end %>
+
+
 <% if user_allowed %>
 <%= link_to 'Edit', edit_event_path(@event) %> 
 <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
