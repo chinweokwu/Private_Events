@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>Events (<%= @future_events.count + @past_events.count%>)</h1>
 
 <table>
   <thead>
@@ -23,10 +23,35 @@
         <td><%= event.start_time %></td>
         <td><%= event.end_time %></td>
         <td><%= link_to 'Show', event %></td>
-      </tr>
+       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+ <h2>Future Events (<%= @future_events.count%>)</h2>
+<ul>
+<% if @events.future_events.any? %>
+     <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.description %></td>
+        <td><%= event.start_time %></td>
+        <td><%= event.end_time %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+<% end %>
+</ul>
+
+ <h2>Past Events (<%= @past_events.count%>)</h2>
+<ul>
+<% if @events.past_events.any? %>
+     <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.description %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+<% end %>
+</ul>
 

@@ -10,40 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_221725) do
-
-  create_table "event_attendees", force: :cascade do |t|
-    t.integer "attendee_id"
-    t.integer "attended_event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20_200_903_185_356) do
+  create_table 'event_attendees', force: :cascade do |t|
+    t.integer 'attendee_id'
+    t.integer 'attended_event_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.text "description"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "creator_id"
-    t.index ["creator_id"], name: "index_events_on_creator_id"
+  create_table 'events', force: :cascade do |t|
+    t.string 'name'
+    t.string 'location'
+    t.text 'description'
+    t.datetime 'start_time'
+    t.datetime 'end_time'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'creator_id'
+    t.date 'date'
+    t.index ['creator_id'], name: 'index_events_on_creator_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "username"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'name'
+    t.string 'username'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+    t.index ['username'], name: 'index_users_on_username', unique: true
   end
-
 end
