@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
+<% if @events.future_events.any? %>
+<%= render @events.future %>
+<% else %>
+ <h2> Events (0) </h2> 
+ <%= link_to new_event_path do %>
+ Add Event
+ <% end %>
+ <% end %>
+
+ <h2>Past Events</h2>
+ <% if @events.past_events.any? %>
+<%= render @events.past %>
+<% end %>
 
 <h1>Events (<%= @future_events.count + @past_events.count%>)</h1>
 
