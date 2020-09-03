@@ -25,16 +25,11 @@
   <%= @event.end_time %>
 </p>
 
-
-<button>Click to attend event </button>
-
-<br>
 <strong>Attendees</strong>
 <br>
-<% @attendees.each do |attendee| %>
-<%= @attendee.name %>
-<% end %>
+<%= render 'attendee_list' %>
 
+<%= render 'attend'%>
 
 <% if user_allowed %>
 <%= link_to 'Edit', edit_event_path(@event) %> 
