@@ -1,17 +1,3 @@
-<p id="notice"><%= notice %></p>
-<% if @events.future_events.any? %>
-<%= render @events.future %>
-<% else %>
- <h2> Events (0) </h2> 
- <%= link_to new_event_path do %>
- Add Event
- <% end %>
- <% end %>
-
- <h2>Past Events</h2>
- <% if @events.past_events.any? %>
-<%= render @events.past %>
-<% end %>
 
 <h1>Events (<%= @future_events.count + @past_events.count%>)</h1>
 
@@ -28,43 +14,35 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+   <h2>Upcoming events (<%= @future_events.count %>)</h2>
+  
+    <% @future_events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
         <td><%= event.location %></td>
         <td><%= event.description %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
+        <td><%= event.date %></td>
         <td><%= link_to 'Show', event %></td>
-       </tr>
+        <td><%= link_to 'Attend', event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Previous events (<%= @past_events.count %>)</h2>
+  <tbody>
+    <% @past_events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.description %></td>
+        <td><%= event.date %></td>
+         <td><%= link_to 'Show', event %></td>
+     </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
- <h2>Future Events (<%= @future_events.count%>)</h2>
-<ul>
-<% if @events.future_events.any? %>
-     <tr>
-        <td><%= event.name %></td>
-        <td><%= event.location %></td>
-        <td><%= event.description %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= link_to 'Show', event %></td>
-      </tr>
-<% end %>
-</ul>
 
- <h2>Past Events (<%= @past_events.count%>)</h2>
-<ul>
-<% if @events.past_events.any? %>
-     <tr>
-        <td><%= event.name %></td>
-        <td><%= event.location %></td>
-        <td><%= event.description %></td>
-        <td><%= link_to 'Show', event %></td>
-      </tr>
-<% end %>
-</ul>
 

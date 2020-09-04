@@ -19,4 +19,12 @@ class User < ApplicationRecord
   def cancel!(event)
     event_attendees.find_by(attended_event_id: event.id).destroy
   end
+
+  def future_events
+    self.attended_events.future
+  end
+
+  def past_events
+    self.attended_events.past
+  end
 end
