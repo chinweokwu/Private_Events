@@ -21,10 +21,10 @@ class User < ApplicationRecord
   end
 
   def future_events
-    self.attended_events.future
+    attended_events.future
   end
 
   def past_events
-    self.attended_events.past
+    attended_events.past
   end
 end

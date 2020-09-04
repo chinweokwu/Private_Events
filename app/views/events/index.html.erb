@@ -1,5 +1,6 @@
+<p id="notice"><%= notice %></p>
 
-<h1>Events (<%= @future_events.count + @past_events.count%>)</h1>
+<h1>Events (<%= @future_events.count + @past_events.count %>)</h1>
 
 <table>
   <thead>
@@ -12,10 +13,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+<h2>Upcoming events (<%= @future_events.count %>)</h2>
   <tbody>
-   <h2>Upcoming events (<%= @future_events.count %>)</h2>
-  
     <% @future_events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
@@ -30,6 +29,7 @@
 </table>
 
 <h2>Previous events (<%= @past_events.count %>)</h2>
+<table>
   <tbody>
     <% @past_events.each do |event| %>
       <tr>
@@ -44,5 +44,3 @@
 </table>
 
 <br>
-
-
