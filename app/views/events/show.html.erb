@@ -16,20 +16,19 @@
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
+  <strong>Event Date:</strong>
+  <%= @event.date %>
 </p>
 
 <strong>Attendees</strong>
 <br>
 <%= render 'attendee_list' %>
 
+
 <%= render 'attend'%>
+
+
+
 
 <% if user_allowed %>
 <%= link_to 'Edit', edit_event_path(@event) %> 

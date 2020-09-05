@@ -26,12 +26,13 @@
     <div class="navbar-end">
       <% if user_signed_in? %>
       <div class="navbar-item has-dropdown is-hoverable">
-        <%= link_to 'New', '#', class: "navbar-link" %>
+        <%= link_to 'Event', '#', class: "navbar-link" %>
         <div class="navbar-dropdown">
-        <%= link_to 'Events', events_path , class:"navbar-item" %>
-          <%= link_to 'Create New Event', new_event_path, class:"navbar-item" %>
+        <%= link_to 'All Events', events_path , class:"navbar-item" %>
+        <%= link_to 'Events Attending', events_path , class:"navbar-item" %>
         </div>
       </div>
+      <%= link_to 'Create New Event', new_event_path, class:"navbar-item" %>
       <div class="navbar-item has-dropdown is-hoverable">
         <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
         <div class="navbar-dropdown is-right">
