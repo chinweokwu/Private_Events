@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <strong>Event Date:</strong>
+  <strong>Date:</strong>
   <%= @event.date %>
 </p>
 
@@ -24,11 +24,7 @@
 <br>
 <%= render 'attendee_list' %>
 
-
 <%= render 'attend'%>
-
-
-
 
 <% if user_allowed %>
 <%= link_to 'Edit', edit_event_path(@event) %> 

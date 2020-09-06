@@ -5,4 +5,19 @@ class Event < ApplicationRecord
 
   scope :future_events, -> { where('date >= ?', Time.now) }
   scope :past_events, -> { where('date < ?', Time.now) }
+
+  validates :name, presence: true
+  validates :location, presence: true
+  validates :description, presence: true
+  validates :date, presence: true
+  validate :date_not_allowed
+  
+  private
+	
+	def date_not_allowed
+		if date.present? && date < Date.today
+			errors.add(:date, "can not be in the past.")
+		end		
+	end	
+
 end

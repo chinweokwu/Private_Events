@@ -1,0 +1,9 @@
+<% if current_user.attend!(@event).any? %>
+<%= render attended_events %>
+<% else %>
+The user has not signed up to attend any events yet.		
+<% end %>
+<%= form_for(current_user.event_attendees.build(attended_event_id: @event.id)) do |f| %>
+	<%= f.hidden_field :attended_event_id %>
+		<%= f.submit "Attend", class: "btn btn-sm btn-primary" %>
+	<% end %>
