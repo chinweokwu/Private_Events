@@ -1,0 +1,5 @@
+<%= if @future_attended_events.any? %>
+    <% @future_attended_events.each do |each| %>
+        <%= link_to event.title, event %>
+    <%end%>
+ <%end%>       
