@@ -27,12 +27,12 @@ class User < ApplicationRecord
   def past_events
     attended_events.past
   end
-  def future_attended_events(user)
-    future_events = @attended_events.future
+
+  def future_attended_events(_user)
+    @attended_events.future
   end
 end
 
 def current_user?(user)
-    current_user == user
+  current_user == user
 end
-
