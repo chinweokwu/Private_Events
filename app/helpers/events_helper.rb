@@ -13,13 +13,11 @@ module EventsHelper
         end
     end
 
-    def attendee
+    def attendee_list
         if @event.attendees.any? 
-            @event.attendees.each do |attendee|
-             attendee.username
-            end
+            render :partial => 'events/attendee_list'
         else 
-            No attendees
+            'No Attendees'
         end
     end
 end
