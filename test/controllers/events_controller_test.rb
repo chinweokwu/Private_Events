@@ -19,4 +19,20 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     get event_url(@event)
     assert_response :success
   end
+
+  test 'should get edit' do
+    get edit_event_url(@event)
+    assert_response :success
+  end
+
+  test 'should update event' do
+    patch event_url(@event), params: { event: { creator_id: @event.creator_id, date: @event.date, description: @event.description, name: @event.name } }
+    assert_redirected_to event_url(@event)
+  end
+
+  test 'should destroy event' do
+    assert_difference('Event.count', -1) do
+      delete event_url(@event)
+  end
+end
 end
