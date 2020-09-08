@@ -1,5 +1,1 @@
-<% if user_signed_in? && current_user.attending?(@event) %> 
-	<%= render 'cancel_event' %>
-<% else %>
-	<%= render 'attend_event' %>
-<% end %>
+<%= attend(current_user)%>
