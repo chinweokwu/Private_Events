@@ -1,0 +1,10 @@
+<h2>Upcoming events (<%= @future_events.count %>)</h2>
+  <tbody>
+    <% @future_events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.date %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+    <% end %>
+  </tbody>

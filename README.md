@@ -49,4 +49,8 @@ Feel free to check the [issues page]().
 
 ## Show your support
 
+<<<<<<< HEAD
 Give a ⭐️ if you like this project!
+=======
+Give a ⭐️ if you like this project!
+>>>>>>> f38b595466853c89b702debe03ce744a87acda5b

@@ -25,9 +25,5 @@
 <%= render 'attendee_list' %>
 
 <%= render 'attend'%>
-
-<% if user_allowed %>
-<%= link_to 'Edit', edit_event_path(@event) %> 
-<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%end%>
+<%= show_user %>
 <%= link_to 'Back', events_path %>
