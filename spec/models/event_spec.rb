@@ -1,13 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  subject {
-    described_class.new(name: "paul oksana",
-                        location: "nigeria ukraine",
-                        description: "Lorem ipsum",
-                        date: Time.now,
-                        user_id: 1)
+  let(:creator) { User.new }
+  subject { Event.new(name: "Birthday", 
+                      location: "nigeria ukraine", 
+                      description: "Lorem ipsum", 
+                      date: Time.now,
+                      creator: creator
+                      )
   }
+    before{ subject.save }
+
   it "is valid with valid attributes" do
     expect(subject).to be_valid
   end
