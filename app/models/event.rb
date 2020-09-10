@@ -11,13 +11,10 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates :date, presence: true
   validate :date_not_allowed
-  
-  private
-	
-	def date_not_allowed
-		if date.present? && date < Date.today
-			errors.add(:date, "can not be in the past.")
-		end		
-	end	
 
+  private
+
+  def date_not_allowed
+    errors.add(:date, 'can not be in the past.') if date.present? && date < Date.today
+  end
 end

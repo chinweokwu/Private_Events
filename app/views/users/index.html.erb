@@ -1,21 +1,26 @@
 <h2>Upcoming events (<%= @future_events.count %>)</h2>
-  <tbody>
+  <ol>
     <% @future_events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.date %></td>
-        <td><%= link_to 'Show', event %></td>
-      </tr>
+      
+        <li><%= event.name %>
+           <%= link_to 'Show', event %></li>
+        <li><%= event.date %></li>
+       
+      
     <% end %>
-  </tbody>
-
+  </ol>
+<br>
+<br>
+<br>
   <h2>Attended events (<%= @attended_events.count %>)</h2>
-  <tbody>
+  
+  <ol>
     <% @attended_events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.date %></td>
-        <td><%= link_to 'Show', event %></td>
-      </tr>
+     
+        <li><%= event.name %>
+        <%= link_to 'Show', event %></li>
+        <li><%= event.date %></li>
+        
+     
     <% end %>
-  </tbody>
+  </ol>

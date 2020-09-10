@@ -1,4 +1,7 @@
 
   <% @event.attendees.each do |attendee| %>
-        <%= attendee.username %>
+        <ol>
+          <li><%= attendee.username %>
+          </li>
+          <ol>
   <% end %>

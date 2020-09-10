@@ -3,8 +3,8 @@ module ApplicationHelper
     user_signed_in? && (current_user.id == @event.creator_id)
   end
 
-  def future_attended_events(user)
-    future_events = @attended_events.future
+  def future_attended_events(_user)
+    @attended_events.future
   end
 
   def current_user?(user)
@@ -22,18 +22,17 @@ module ApplicationHelper
   def show_user
     if user_allowed
       (link_to 'Edit', edit_event_path(@event)) +
-      (link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' })
+        (link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' })
     end
   end
 
-  def login_helper(current_user)
-    if user_signed_in?     
-      render :partial => 'layouts/signed_in'
+  def login_helper(_current_user)
+    if user_signed_in?
+      render partial: 'layouts/signed_in'
     else
-      (link_to 'Events', events_path , class:"navbar-item")+
-      (link_to "Sign In", new_user_session_path, class:"navbar-item")+
-      (link_to "Sign up", new_user_registration_path, class:"navbar-item")
+      (link_to 'Events', events_path, class: 'navbar-item') +
+        (link_to 'Sign In', new_user_session_path, class: 'navbar-item') +
+        (link_to 'Sign up', new_user_registration_path, class: 'navbar-item')
     end
   end
-
 end
