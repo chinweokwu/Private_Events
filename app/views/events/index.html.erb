@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events (<%= @future_events.count + @past_events.count %>)</h1>
+<h1>All Events</h1>
+
+<% @events.each do |event| %>
+        <ul>
+          <li><%= event.name %>
+          <%= link_to 'Show', event %>
+          </li>
+          <ul>
+  <% end %>
 
 <table>
   <thead>
