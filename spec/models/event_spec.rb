@@ -11,6 +11,8 @@ RSpec.describe Event, type: :model do
     it { should validate_presence_of(:location) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:date) }
+    it { should validate_presence_of(:creator_id) }
+
   end
 
   subject { described_class.new(location: 'nil', description: 'nil', date: 'nil') }
@@ -37,5 +39,9 @@ RSpec.describe Event, type: :model do
 
   it 'is valid with a date' do
     subject.date = '10/10/2020'
+  end
+
+  it 'is valid with a creator' do
+    subject.creator_id = 'Anybody'
   end
 end
