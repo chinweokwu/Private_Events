@@ -8,3 +8,14 @@
       </tr>
     <% end %>
   </tbody>
+
+  <h2>Attended events (<%= @attended_events.count %>)</h2>
+  <tbody>
+    <% @attended_events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.date %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+    <% end %>
+  </tbody>
