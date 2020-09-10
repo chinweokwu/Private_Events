@@ -1,3 +1,5 @@
+# rubocop:disable Style/GuardClause
+# rubocop:disable Layout/MultilineOperationIndentation
 module ApplicationHelper
   def user_allowed
     user_signed_in? && (current_user.id == @event.creator_id)
@@ -22,7 +24,7 @@ module ApplicationHelper
   def show_user
     if user_allowed
       (link_to 'Edit', edit_event_path(@event)) +
-        (link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' })
+      (link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' })
     end
   end
 
@@ -31,8 +33,10 @@ module ApplicationHelper
       render partial: 'layouts/signed_in'
     else
       (link_to 'Events', events_path, class: 'navbar-item') +
-        (link_to 'Sign In', new_user_session_path, class: 'navbar-item') +
-        (link_to 'Sign up', new_user_registration_path, class: 'navbar-item')
+      (link_to 'Sign In', new_user_session_path, class: 'navbar-item') +
+      (link_to 'Sign up', new_user_registration_path, class: 'navbar-item')
     end
   end
 end
+# rubocop:enable Style/GuardClause
+# rubocop:enable Layout/MultilineOperationIndentation
