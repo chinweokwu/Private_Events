@@ -1,6 +1,8 @@
 <% if @event.attendees.any? %>
 <% @event.attendees.each do |attendee| %>
-        <%= attendee.username %>
+<ol>
+        <li><%= attendee.username %></li>
+        </ol>
 <% end %>
 <% else %>
 No attendees
