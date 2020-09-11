@@ -1,5 +1,6 @@
 require 'rails_helper'
-
+# rubocop:disable Layout/FirstArgumentIndentation
+# rubocop:disable Layout/ClosingParenthesisIndentation
 RSpec.describe 'events/index', type: :view do
   let(:creator) { User.new }
   before(:each) do
@@ -28,3 +29,5 @@ RSpec.describe 'events/index', type: :view do
     assert_select 'tr>td', text: 'MyText'.to_s, count: 2
   end
 end
+# rubocop:enable Layout/FirstArgumentIndentation
+# rubocop:enable Layout/ClosingParenthesisIndentation
