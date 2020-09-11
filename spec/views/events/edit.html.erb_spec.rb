@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'events/edit', type: :view do
+  let(:creator) { User.new }
   before(:each) do
     @event = assign(:event, Event.create!(
                               name: 'MyString',
                               location: 'MyString',
-                              description: 'MyText'
+                              description: 'MyText',
+                              date: Date.today,
+                              creator: creator
                             ))
   end
 

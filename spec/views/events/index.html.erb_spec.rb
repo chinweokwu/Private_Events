@@ -1,17 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe 'events/index', type: :view do
+  let(:creator) { User.new }
   before(:each) do
     assign(:events, [
              Event.create!(
-               name: 'Name',
-               location: 'Location',
-               description: 'MyText'
+              name: 'MyString',
+              location: 'MyString',
+              description: 'MyText',
+              date: Date.today,
+              creator: creator
              ),
              Event.create!(
-               name: 'Name',
-               location: 'Location',
-               description: 'MyText'
+              name: 'MyString',
+              location: 'MyString',
+              description: 'MyText',
+              date: Date.today,
+              creator: creator
              )
            ])
   end
