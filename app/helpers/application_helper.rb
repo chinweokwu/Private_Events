@@ -9,10 +9,6 @@ module ApplicationHelper
     @attended_events.future
   end
 
-  def current_user?(user)
-    current_user == user
-  end
-
   def notification(notice, alert)
     if notice
       content_tag(:p, notice, class: 'notice notification is-primary global-notification')
