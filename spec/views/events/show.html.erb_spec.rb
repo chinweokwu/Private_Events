@@ -17,5 +17,6 @@ RSpec.describe 'events/show', type: :view do
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Location/)
     expect(rendered).to match(/MyText/)
+    expect(rendered).to match(/MyDate/)
   end
 end

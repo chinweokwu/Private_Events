@@ -3,8 +3,8 @@ class Event < ApplicationRecord
   has_many :event_attendees, foreign_key: :attended_event_id
   has_many :attendees, through: :event_attendees
 
-  scope :future_events, -> { where('date >= ?', Time.now) }
-  scope :past_events, -> { where('date < ?', Time.now) }
+  scope :future_events, -> { where('date >= ?', Time.now).includes(:creator) }
+  scope :past_events, -> { where('date < ?', Time.now).includes(:creator)  }
 
   validates :name, presence: true
   validates :location, presence: true

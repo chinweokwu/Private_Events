@@ -1,6 +1,6 @@
-<h2>Upcoming events (<%= @future_events.count %>)</h2>
+<h2>Created events (<%= @created_events.count %>)</h2>
   <ol>
-    <% @future_events.each do |event| %>
+    <% @created_events.each do |event| %>
         <li>
           <%= event.name %>
           <%= link_to 'Show', event %>
